@@ -3,7 +3,7 @@ name: Run PHP Script
 
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/5 * * * *"
       timezone: "Asia/Kolkata"
   workflow_dispatch:
 
