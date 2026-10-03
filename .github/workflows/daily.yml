@@ -21,4 +21,4 @@ jobs:
           php-version: "8.3"
 
       - name: Execute PHP script
-        run: php script.php
+        run: php daily-script.php
