@@ -1,15 +1,18 @@
-
 name: Run PHP Script
 
 on:
   schedule:
     - cron: "2-59/5 * * * *"
-      timezone: "Asia/Kolkata"
   workflow_dispatch:
+
+concurrency:
+  group: run-php
+  cancel-in-progress: false
 
 jobs:
   run-php:
     runs-on: ubuntu-latest
+    timeout-minutes: 4
 
     steps:
       - name: Checkout repository
