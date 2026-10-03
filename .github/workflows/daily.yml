@@ -1,9 +1,9 @@
 
-name: Run PHP Script Daily
+name: Run PHP Script
 
 on:
   schedule:
-    - cron: "0 9 * * *"
+    - cron: "*/1 * * * *"
       timezone: "Asia/Kolkata"
   workflow_dispatch:
 
@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download repository code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install PHP
+      - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: "8.3"
 
       - name: Execute PHP script
-        run: php daily-script.php
+        run: php script.php
